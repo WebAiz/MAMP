@@ -7,7 +7,7 @@ if ( isset($_POST['cancel'] ) ) {
 }
 
 $salt = 'XyZzy12*_';
-$stored_hash = 'a8609e8d62c043243c4e201cbb342862';  // Pw is meow123
+$stored_hash = '1a52e17fa899cf40fb04cfc42e6352f1';  // Pw is meow123
 
 $failure = false;  // If we have no POST data
 
