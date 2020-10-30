@@ -19,3 +19,7 @@ CREATE TABLE users (
 
 INSERT INTO users (name,email,password) VALUES ('Chuck','csev@umich.edu','123');
 INSERT INTO users (name,email,password) VALUES ('Glenn','gg@umich.edu','456');
+
+
+
+fdsfdsjkhfdskjf
