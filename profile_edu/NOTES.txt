@@ -1,0 +1,73 @@
+To get started run the following SQL commands:
+
+CREATE DATABASE misc;
+CREATE USER 'fred'@'localhost' IDENTIFIED BY 'zap';
+GRANT ALL ON misc.* TO 'fred'@'localhost';
+CREATE USER 'fred'@'127.0.0.1' IDENTIFIED BY 'zap';
+GRANT ALL ON misc.* TO 'fred'@'127.0.0.1';
+
+USE misc; (Or select misc in phpMyAdmin)
+
+CREATE TABLE autos (
+    autos_id INTEGER NOT NULL KEY AUTO_INCREMENT,
+    make VARCHAR(255),
+    model VARCHAR(255),
+    year INTEGER,
+    mileage INTEGER
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO users (make,model,year,mileage) VALUES ('152','123','1997','2569');
+
+new brach ex
+
+
+CREATE TABLE Institution (
+  institution_id INTEGER NOT NULL KEY AUTO_INCREMENT,
+  name VARCHAR(255),
+  UNIQUE(name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE Education (
+  profile_id INTEGER,
+  institution_id INTEGER,
+  rank INTEGER,
+  year INTEGER,
+  CONSTRAINT education_ibfk_1
+    FOREIGN KEY (profile_id)
+    REFERENCES Profile (profile_id)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT education_ibfk_2
+    FOREIGN KEY (institution_id)
+    REFERENCES Institution (institution_id)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+  PRIMARY KEY(profile_id, institution_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO Institution (name) VALUES ('University of Michigan');
+INSERT INTO Institution (name) VALUES ('University of Virginia');
+INSERT INTO Institution (name) VALUES ('University of Oxford');
+INSERT INTO Institution (name) VALUES ('University of Cambridge');
+INSERT INTO Institution (name) VALUES ('Stanford University');
+INSERT INTO Institution (name) VALUES ('Duke University');
+INSERT INTO Institution (name) VALUES ('Michigan State University');
+INSERT INTO Institution (name) VALUES ('Mississippi State University');
+INSERT INTO Institution (name) VALUES ('Montana State University');
+
+
+<head>
+...
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css"> 
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+...
+</head>
+_____________________________________________________________
+changed
